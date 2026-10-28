@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Entrevistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Aplicação de Agendamento de Entrevistas</h1>
+        <p>Acede ao <strong>Console</strong> do navegador (pressionando <strong>F12</strong>) para veres a lista de candidatos ordenada alfabeticamente e os horários distribuídos[cite: 9].</p>
+    </div>
+
+    <script>
+        var hora = 8;
+        var minutos = 20;
+        var total_entrevistas = 0;
+        const saida = 11;
+
+        var entrevistados = [
+            "João Mariano",
+            "Adélia de Souza",
+            "Fábio Almeida",
+            "Carla Silva",
+            "Paulo Arruda",
+            "Leonardo Rocha",
+            "Tiago de Lima",
+            "Patrícia de Lima",
+            "Fernanda Brito",
+            "Maria da Conceição"
+        ];
+
+        // Ordenando os entrevistados alfabeticamente[cite: 9]
+        entrevistados.sort();
+
+        for (let i = hora; i <= saida; i = i + 1) {
+            if ((i == 12) || (i == 13)) {
+                continue;
+            }
+            for (let j = 0; j < 60; j = j + minutos) {
+                total_entrevistas++;
+                if (j == 0) {
+                    console.log(i + ":" + j + "0", "-", entrevistados[total_entrevistas - 1]);
+                } else {
+                    console.log(i + ":" + j, "-", entrevistados[total_entrevistas - 1]);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
